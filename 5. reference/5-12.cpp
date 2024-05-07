@@ -39,19 +39,21 @@ void Person::changeName(const char* name) {
     strcpy(this->name, name);
 }
 
+void f(Person person){
+    person.changeName("dummy");
+}
+
+Person g(){
+    Person mother(2, "Jane");
+    return mother;
+}
+
 int main(){
-    Person father(1, "Kitae");      // (1) father 객체 생성
-    Person daughter(father);        // (2) daughter 객체 복사 생성. 복사생성자호출
+    
+    Person father(1, "Kitae");
+    Person son = father;
+    f(father);
+    g();
 
-    cout << "daughter 객체 생성 직후 ____" << endl;
-    father.show();                  // (3) father 객체 출력
-    daughter.show();                // (3) daughter 객체 출력
-
-    daughter.changeName("Grace");   // (4) daughter의 이름을 "Grace"로 변경
-    cout << "daughter 이름을 Grace로 변경한 후 ____" << endl;
-    father.show();                  // (5) father 객체 출력
-    daughter.show();                // (5) daughter 객체 출력
-
-    return 0;                       // (6), (7) daughter, father 객체 소멸
-
+    return 0;
 }

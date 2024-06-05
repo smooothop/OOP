@@ -16,7 +16,7 @@ void Power::show() {
     cout << "kick=" << kick << ',' << "punch=" << punch << endl;
 }
 
-bool Power::operator! () {
+bool Power::operator! () { // kick과 punch가 
     if(kick == 0 && punch == 0) return true;
     else return false;
 }

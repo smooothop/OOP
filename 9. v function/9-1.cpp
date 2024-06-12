@@ -11,7 +11,7 @@ public:
     void f() { cout << "Base::f()called" << endl; }
 };
 
-void main() {
+int main() {
     Derived d, *pDer;
     pDer = &d;
     pDer->f(); // Derived::f() 호출

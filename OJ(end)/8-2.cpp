@@ -49,11 +49,12 @@ public:
 //전역변수 static변수도 사용 금지.
 
 //..........여기에 public_record 클라스 정의............
-class public_record : police_record {
+class public_record : public police_record {
     string name;
     int age;
 public:
-    public_record(string password, int pre_conviction, string name, int age);
+    public_record(string password, int pre_conviction, string name, int age)
+		:police_record(password, convictions), name(name), age(age) {}
     void print_data(string password = "");
 };
 
